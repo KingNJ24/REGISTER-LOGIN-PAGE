@@ -28,7 +28,7 @@ app.post('/', async (req, res) => {
         
             res.status(400).send('All fields are required');
     }
-    const emailExists = User.findOne({email})
+    const emailExists =await User.findOne({email})
     if(emailExists){
         res.status(400).send('User already exists')
     }
